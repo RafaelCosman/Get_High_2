@@ -24,23 +24,23 @@ void reset()
   if (currentLevel == 1)
   {
     playerStartLoc = new PVector(width / 2, height / 2 + 25);
-    player = new Player(new PVector(playerStartLoc.x, playerStartLoc.y), new PVector(0, 0), new PVector(10, 10), .25, false);
+    player = new Player(new PVector(playerStartLoc.x, playerStartLoc.y), new PVector(10, 10), .25, false);
     walls = new ArrayList<Wall>();
-    walls.add(new Wall(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(width / 2, 400), new PVector(100, 100), 0));
-    walls.add(new Wall(new PVector(100, 400), new PVector(125, 400), new PVector(-2, 0), new PVector(125, 400), new PVector(100, 10), 2));
+    walls.add(new Wall(new PVector(), new PVector(), new PVector(width / 2, 400), new PVector(100, 100), 0));
+    walls.add(new Wall(new PVector(100, 400), new PVector(125, 400), new PVector(125, 400), new PVector(100, 10), 2));
     hazards = new ArrayList<Hazard>();
-    hazards.add(new Hazard(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(200, 265), new PVector(100, 10), 0));
-    hazards.add(new Hazard(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(245, 355), new PVector(10, 10), 0));
+    hazards.add(new Hazard(new PVector(), new PVector(), new PVector(200, 265), new PVector(100, 10), 0));
+    hazards.add(new Hazard(new PVector(), new PVector(), new PVector(245, 355), new PVector(10, 10), 0));
   } else if (currentLevel == 2)
   {
-    playerStartLoc = new PVector(width / 2, height / 2);
-    player = new Player(new PVector(playerStartLoc.x, playerStartLoc.y), new PVector(0, 0), new PVector(10, 10), .25, false);
+    playerStartLoc = new PVector(width / 2, height / 2 + 25);
+    player = new Player(new PVector(playerStartLoc.x, playerStartLoc.y), new PVector(10, 10), .25, false);
     walls = new ArrayList<Wall>();
-    walls.add(new Wall(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(width / 2, 400), new PVector(100, 100), 0));
-    walls.add(new Wall(new PVector(100, 400), new PVector(125, 400), new PVector(-2, 0), new PVector(125, 400), new PVector(100, 10), 2));
+    walls.add(new Wall(new PVector(), new PVector(), new PVector(width / 2, 400), new PVector(100, 100), 0));
+    walls.add(new Wall(new PVector(100, 400), new PVector(125, 400), new PVector(125, 400), new PVector(100, 10), 2));
     hazards = new ArrayList<Hazard>();
-    hazards.add(new Hazard(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(200, 265), new PVector(100, 10), 0));
-    hazards.add(new Hazard(new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), new PVector(245, 355), new PVector(10, 10), 0));
+    hazards.add(new Hazard(new PVector(), new PVector(), new PVector(200, 265), new PVector(100, 10), 0));
+    hazards.add(new Hazard(new PVector(), new PVector(), new PVector(245, 355), new PVector(10, 10), 0));
   }
 }
 

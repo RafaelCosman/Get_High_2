@@ -3,11 +3,11 @@ class Wall
   PVector wayPoint0, wayPoint1, vel, loc, wallSize;
   float speed;
 
-  Wall(PVector wayPoint0, PVector wayPoint1, PVector vel, PVector loc, PVector wallSize, float speed)
+  Wall(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector wallSize, float speed)
   {
     this.wayPoint0 = wayPoint0;
     this.wayPoint1 = wayPoint1;
-    this.vel = vel;
+    this.vel = new PVector();
     this.loc = loc;
     this.wallSize = wallSize;
     this.speed = speed;

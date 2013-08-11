@@ -4,10 +4,10 @@ class Player
   float gravity;
   boolean grounded;
 
-  Player(PVector loc, PVector vel, PVector playerSize, float gravity, boolean grounded)
+  Player(PVector loc, PVector playerSize, float gravity, boolean grounded)
   {
     this.loc = loc;
-    this.vel = vel;
+    this.vel = new PVector();
     this.playerSize = playerSize;
     this.gravity = gravity;
     this.grounded = grounded;

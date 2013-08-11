@@ -3,11 +3,11 @@ class Hazard
   PVector wayPoint0, wayPoint1, vel, loc, hazardSize;
   float speed;
 
-  Hazard(PVector wayPoint0, PVector wayPoint1, PVector vel, PVector loc, PVector hazardSize, float speed)
+  Hazard(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector hazardSize, float speed)
   {
     this.wayPoint0 = wayPoint0;
     this.wayPoint1 = wayPoint1;
-    this.vel = vel;
+    this.vel = new PVector();
     this.loc = loc;
     this.hazardSize = hazardSize;
     this.speed = speed;
