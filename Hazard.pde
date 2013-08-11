@@ -21,10 +21,15 @@ class Hazard
 
   void run()
   {
-    if (loc.dist(wayPoint0) <= speed)
+    if (loc.dist(wayPoint0) <= speed || vel.equals(new PVector()))
       vel.add(PVector.sub(wayPoint1, loc));
     if (loc.dist(wayPoint1) <= speed)
-      vel.add(PVector.sub(wayPoint0, loc));
+    {
+      if (!wayPoint0.equals(NO_WAYPOINT))
+        vel.add(PVector.sub(wayPoint0, loc)); 
+      else
+        vel.set(0, 0, 0);
+    }
     vel.setMag(speed);
     loc.add(vel);
   }

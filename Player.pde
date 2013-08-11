@@ -4,11 +4,11 @@ class Player
   float gravity;
   boolean grounded;
 
-  Player(PVector loc, PVector playerSize, float gravity, boolean grounded)
+  Player(PVector loc, float gravity, boolean grounded)
   {
     this.loc = loc;
     this.vel = new PVector();
-    this.playerSize = playerSize;
+    this.playerSize = new PVector(10, 10);
     this.gravity = gravity;
     this.grounded = grounded;
   }
@@ -30,7 +30,11 @@ class Player
           loc.sub(vel);
           vel.set(0, 0, 0);
         } else if (get(x, y) == HAZARD_COLOR)
+          reset(); else if (get(x, y) == END_COLOR)
+        {
+          currentLevel ++;
           reset();
+        }
       }
     }
     int rightCollisions = 0;
