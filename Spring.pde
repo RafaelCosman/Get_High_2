@@ -1,23 +1,23 @@
-class Hazard extends Wall
+class Spring extends Hazard
 {
-  PVector wayPoint0, wayPoint1, vel, loc, hazardSize;
+  PVector wayPoint0, wayPoint1, vel, loc, springSize;
   float speed;
 
-  Hazard(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector hazardSize, float speed)
+  Spring(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector springSize, float speed)
   {
-    super(wayPoint0, wayPoint1, loc, hazardSize, speed);
+    super(wayPoint0, wayPoint1, loc, springSize, speed);
     this.wayPoint0 = wayPoint0;
     this.wayPoint1 = wayPoint1;
     this.vel = new PVector();
     this.loc = loc;
-    this.hazardSize = hazardSize;
+    this.springSize = springSize;
     this.speed = speed;
   }
 
   void show()
   {
-    fill(HAZARD_COLOR);
-    rect(loc.x, loc.y, hazardSize.x, hazardSize.y);
+    fill(SPRING_COLOR);
+    rect(loc.x, loc.y, springSize.x, springSize.y);
   }
 
   void run()

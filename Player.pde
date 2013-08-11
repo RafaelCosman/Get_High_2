@@ -21,6 +21,7 @@ class Player
 
   void run()
   {
+    boolean shouldBreak = false;
     for (int x = int(width / 2 - (playerSize.x / 2)); x <= int(width / 2 + (playerSize.x / 2)); x ++)
     {
       for (int y = int(height / 2 - (playerSize.y / 2)); y <= int(height / 2 + (playerSize.y / 2)); y ++)
@@ -34,13 +35,20 @@ class Player
         {
           currentLevel ++;
           reset();
+        } else if (get(x, y) == SPRING_COLOR)
+        {
+          vel.y -= 7;
+          shouldBreak = true;
+          break;
         }
       }
+      if (shouldBreak)
+        break;
     }
     int rightCollisions = 0;
     int leftCollisions = 0;
     grounded = false;
-    boolean shouldBreak = false;
+    shouldBreak = false;
     for (int y = int(height / 2 - (playerSize.y / 2)); y <= int(height / 2 + (playerSize.y / 2)); y ++)
     {
       if (get(int(width / 2 + (playerSize.x / 2) + 1), y) == WALL_COLOR || get(int(width / 2 - (playerSize.x / 2) - 1), y) == WALL_COLOR)

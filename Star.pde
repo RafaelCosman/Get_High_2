@@ -1,23 +1,23 @@
-class Hazard extends Wall
+class Star extends Hazard
 {
-  PVector wayPoint0, wayPoint1, vel, loc, hazardSize;
+  PVector wayPoint0, wayPoint1, vel, loc, starSize;
   float speed;
 
-  Hazard(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector hazardSize, float speed)
+  Star(PVector wayPoint0, PVector wayPoint1, PVector loc, PVector starSize, float speed)
   {
-    super(wayPoint0, wayPoint1, loc, hazardSize, speed);
+    super(wayPoint0, wayPoint1, loc, starSize, speed);
     this.wayPoint0 = wayPoint0;
     this.wayPoint1 = wayPoint1;
     this.vel = new PVector();
     this.loc = loc;
-    this.hazardSize = hazardSize;
+    this.starSize = starSize;
     this.speed = speed;
   }
 
   void show()
   {
-    fill(HAZARD_COLOR);
-    rect(loc.x, loc.y, hazardSize.x, hazardSize.y);
+    fill(STAR_COLOR);
+    rect(loc.x, loc.y, starSize.x, starSize.y);
   }
 
   void run()
